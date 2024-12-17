@@ -1,0 +1,19 @@
+[options]
+mode bmc
+depth 18
+vcd off
+
+[engines]
+abc bmc3
+
+[script]
+read_verilog -sv ClockGate.v LogPerfHelper.v ResetCounter.sv STD_CLKGT_func.v TLLogWriter.v VerifyTop_mshrctl_simp.sv
+prep -top VerifyTop -nordff
+
+[files]
+ClockGate.v
+LogPerfHelper.v
+ResetCounter.sv
+STD_CLKGT_func.v
+TLLogWriter.v
+VerifyTop_mshrctl_simp.sv
