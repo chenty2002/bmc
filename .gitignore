@@ -3,3 +3,7 @@ picosat/
 *.aig
 *.aag
 verify_aig/
+bmc
+cadical/
+minisat/
+libcadical.a

@@ -1,12 +1,20 @@
-# pybmc
+# Modelchecker
+A recent open-source MC tool developed by Xindi Zhang, Lingfeng Zhu, Shaowei Cai, Yongjian Li, from ISCAS. Modelchecker implements the IC3 with an advanced incremental SAT solver named CaDiCaL
 
-## Dependencies
+## Usage
+---
+To build:
 
-* [aigertool](https://github.com/arminbiere/aiger): Used to convert `aig` format to `aag` format. Put it in the same directory as `main.py` by execute `git clone https://github.com/arminbiere/aiger.git` here, and build it with `./configure.sh && make`. Without this tool will only support `aag` format.
-## USAGE
+```
+./rebulid.sh
+make clean
+make -j
+```
 
-* `python main.py --aag <path to config file> --k <number of bound>`: run the algorithm with the given aag format file and bound k
+To Run:
 
-## Note
-
-* `git checkout k-induction` to switch to the k-induction branch
+```
+$ ./modelchecker <AIGER_file> [-sc][-acc]
+```
+- -sc: enable safe sub-cube derivation
+- -acc: enable assuption-core consistency
